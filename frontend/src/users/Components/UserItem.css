@@ -11,6 +11,7 @@
   height: 100%;
   text-decoration: none;
   padding: 1rem;
+  padding-right: 5rem;
   color: white;
   background: #292929;
 }
@@ -25,8 +26,8 @@
 }
 
 .user-item_image {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   margin-right: 1rem;
 }
 
