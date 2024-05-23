@@ -1,20 +1,35 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import MainHeader from "./MainHeader";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import './MainNavigation.css';
+import BackDrop from "../UIElements/BackDrop";
 
 const MainNavigation = props => {
+    const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+
+    const openDrawer = () => {
+        setDrawerIsOpen(true);
+    }
+
+    const closeDrawer = () => {
+        setDrawerIsOpen(false)
+    }
     return (
         <Fragment>
-            <SideDrawer>
+            // Alternative: condition && statement
+
+            {/* drawerIsOpen && (<SideDrawer></SideDrawer>) */}
+            {drawerIsOpen && (<BackDrop onClick={closeDrawer} />)}
+
+            {drawerIsOpen ? (<SideDrawer>
                 <nav className="main-navigation__drawer-nav">
                     <NavLinks />
                 </nav>
-            </SideDrawer>
+            </SideDrawer>) : null}
             <MainHeader>
-                <button className="main-navigation__menu-btn">
+                <button className="main-navigation__menu-btn" onClick={openDrawer}>
                     <span />
                     <span />
                     <span />
