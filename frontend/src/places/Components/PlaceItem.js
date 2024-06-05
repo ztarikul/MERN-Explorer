@@ -3,7 +3,6 @@ import "./PlaceItem.css";
 import Card from "../../shared/Components/UIElements/Card";
 
 const PlaceItem = (props) => {
-  console.log("PlaceItems", props);
   return (
     <li className="place-item">
       <Card className="place-item__content">
@@ -15,7 +14,7 @@ const PlaceItem = (props) => {
           <h3>{props.address}</h3>
           <p>{props.description}</p>
         </div>
-        <div className="place-item__action">
+        <div className="place-item__actions">
           <button>VIEW ON MAP</button>
           <button>EDIT</button>
           <button>DELETE</button>

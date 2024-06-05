@@ -5,7 +5,6 @@ import PlaceItem from "./PlaceItem";
 import "./PlaceList.css";
 
 const PlaceList = (props) => {
-  console.log("PlaceList", props);
   if (props.items.length === 0) {
     return (
       <div className="place-list center">
