@@ -5,12 +5,12 @@ import Avatar from "../../shared/Components/UIElements/Avatar";
 import Card from "../../shared/Components/UIElements/Card";
 
 const UserItem = (props) => {
+  console.log("userItems", props);
   return (
-
     <li className="user-item">
       <Card className="user-item_content">
         {/*  alternative way `/${props.id}/places` */}
-        <Link to={"/" + props.id + "/places"}>
+        <Link to={`/${props.id}/places`}>
           <div className="user-item_image">
             <Avatar image={props.image} alt={props.name} />
           </div>
@@ -23,7 +23,6 @@ const UserItem = (props) => {
         </Link>
       </Card>
     </li>
-
   );
 };
 

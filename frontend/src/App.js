@@ -12,12 +12,11 @@ const App = () => {
       <MainNavigation />
       <main>
         <Routes>
-          <Route exact path="/" element={<Users />} />
-          <Route exact path="/:userId/places" element={<UserPlaces />} />
-          <Route exact path="/places/new" element={<NewPlaces />} />
+          <Route path="/" element={<Users />} />
+          <Route path="/:userId/places" element={<UserPlaces />} />
+          <Route path="/places/new" element={<NewPlaces />} />
         </Routes>
       </main>
-
     </Fragment>
   );
 };
