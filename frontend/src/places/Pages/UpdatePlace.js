@@ -6,6 +6,7 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/util/validators";
+import "./PlaceForm.css";
 
 const DUMMY_PLACES = [
   {
@@ -41,7 +42,6 @@ const UpdatePlace = () => {
 
   const identifiedPlace = DUMMY_PLACES.find((p) => p.id === placeId);
 
-  console.log(identifiedPlace);
   if (!identifiedPlace) {
     return (
       <div className="center">
@@ -51,13 +51,13 @@ const UpdatePlace = () => {
   }
 
   return (
-    <form>
+    <form className="place-form">
       <Input
         id="title"
         element="input"
         type="text"
         label="Title"
-        validators={VALIDATOR_REQUIRE()}
+        validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid title"
         onInput={() => {}}
         value={identifiedPlace.title}
@@ -66,9 +66,8 @@ const UpdatePlace = () => {
       <Input
         id="description"
         element="textarea"
-        type=""
         label="Description"
-        validators={VALIDATOR_MINLENGTH(5)}
+        validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="Please enter a valid desciption. (min 5 characters)"
         onInput={() => {}}
         value={identifiedPlace.description}
